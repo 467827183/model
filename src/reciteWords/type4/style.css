@@ -1,0 +1,19 @@
+.timer{
+    position: absolute;
+    right: 20px;
+}
+.styleColor{
+    font-size: 50px;
+    height: 80px;
+    width: 80%;
+}
+.wordsCenter{
+     margin-top: 22px;
+ }
+.wordsCenter>ul>li{
+    width: 100%;
+    text-align: center;
+}
+.content{
+    position: relative;
+}

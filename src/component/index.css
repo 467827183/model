@@ -1,0 +1,18 @@
+.time{
+    height: 50px;
+    color: blue;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+}
+.content{
+    width: 200px;
+    height: 100px;
+}
+.buttonBig{
+  display: flex;
+  justify-content: space-around;
+}
+.MuiButton-text{
+    display: block;
+}

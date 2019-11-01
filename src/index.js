@@ -1,12 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import {Route,Switch} from 'react-router-dom';
+import login from './login'
+import HomePage from './homePage/index'
+import routers from './routers/router';
+import {map} from 'lodash';
+export default ()=>{
+    return (
+        <Switch>
+            <Route path="/" exact component={login} />
+            {
+                map(routers,item=>(
+                    <Route path={item.path} key={item.path} component={HomePage} />
+                ))
+            }
+        </Switch>
+    )
+}

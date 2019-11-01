@@ -1,0 +1,36 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": [
+            "Chrome >= 60",
+            "Safari >= 10.1",
+            "iOS >= 10.3",
+            "Firefox >= 54",
+            "Edge >= 15"
+          ]
+        }
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    ["import", {
+      "libraryName": "antd",
+      "libraryDirectory": "es",
+      "style": "css"
+    }],
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-class-properties",
+    "syntax-dynamic-import"
+  ]
+}
