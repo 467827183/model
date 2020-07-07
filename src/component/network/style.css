@@ -1,0 +1,12 @@
+.network-error {
+    background: #f9f0f8 url("./link-off.png") no-repeat 16px center;
+    height: 24px;
+    padding: 12px 48px 8px;
+    line-height: 20px;
+}
+
+.fresh {
+    color: #0095e2;
+    text-decoration: underline;
+    cursor: pointer;
+}

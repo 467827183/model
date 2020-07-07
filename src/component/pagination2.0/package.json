@@ -1,0 +1,11 @@
+{
+  "name": "@stararc-enterprise/pagination",
+  "version": "1.0.3",
+  "description": "极安2.0翻页",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Jake",
+  "license": "ISC"
+}

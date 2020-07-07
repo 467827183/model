@@ -1,0 +1,14 @@
+{
+  "name": "@stararc-component/table",
+  "version": "1.0.5",
+  "description": "table",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "table"
+  ],
+  "author": "liheng",
+  "license": "ISC"
+}

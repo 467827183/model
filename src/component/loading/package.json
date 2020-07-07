@@ -1,0 +1,14 @@
+{
+  "name": "@stararc-component/loading",
+  "version": "1.0.0",
+  "description": "列表加载插件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "loading"
+  ],
+  "author": "Able",
+  "license": "ISC"
+}

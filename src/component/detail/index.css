@@ -1,0 +1,643 @@
+.content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.must_p{
+
+}
+.pageContent{
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    /*height: 90%;*/
+    bottom: 10px;
+    margin-bottom: 10px;
+    overflow:hidden;
+    overflow-y: auto;
+}
+.contentArea{
+    padding-top: 36px;
+    background: #fff;
+    padding-bottom: 40px;
+}
+.backTop{
+    width: 100%;
+    height: 10px;
+    background: #f1f1f1;
+}
+
+.contentArea label span{
+    color:red;
+}
+.inputArea{
+    margin-bottom: 10px;
+}
+
+.addMore{
+    width: 630px;
+    text-align: right;
+    margin-top: 20px;
+    color: #1f95e2;
+}
+.addMore span{
+    cursor: pointer;
+}
+.chooseRisk p span:first-child{
+    display:inline-block;
+    width: 280px;
+    text-align: right;
+    font-size: 14px;
+    color: #555555;
+}
+.chooseRisk p span:last-child{
+    padding-left: 20px;
+    font-size: 14px;
+    color: #555555;
+}
+.chooseRisk>div{
+    margin-left: 305px;
+}
+.chechBox{
+    padding-top: 20px;
+    padding-left: 100px;
+}
+
+.buttonArea{
+    width: 630px;
+    text-align: right;
+    margin-top: 20px;
+}
+
+
+/*地图*/
+.map_warp{
+    width: 300px;
+    height: 180px;
+    margin-bottom: 10px;
+}
+
+.enterprise_name_warp{
+    width:100%;
+    min-height:55px;
+}
+.content_name_warp{
+    width:100%;
+    min-height:40px;
+}
+
+.content_name{
+    width:28%;
+    text-align: right;
+    height: auto;
+    float:left;
+    display: block;
+    margin-right:20px;
+    line-height: 30px;
+    color:#666666;
+}
+.area{
+    width:65%;
+    line-height: 30px;
+    display: block;
+    color:#666666;
+}
+
+
+/*group*/
+.group{
+    width: 100%;
+    min-height: 45px;
+    font-size: 14px;
+    /*line-height: 60px;*/
+}
+.group-label{
+    width: 280px;
+    min-height: 40px;
+    display: inline-block;
+    text-align: end;
+    float: left;
+    line-height: 30px;
+    color: #666666;
+}
+.group-content{
+    margin-left: 300px;
+    min-height: 40px;
+}
+.group-error{
+    color: red;
+    width: 100%;
+    display: block;
+    height: 12px;
+    line-height: 12px;
+}
+.requiredStyle{
+    color: red;
+}
+.map{
+    position: absolute;
+    top: 36px;
+    left: 730px;
+}
+.searchError{
+    font-size: 14px;
+    color: red;
+    width: 100%;
+    display: block;
+    height: 12px;
+    line-height: 12px;
+    position: absolute;
+    top: 66px;
+    left: 300px;
+
+}
+/* 查询结果 */
+.resultShow{
+    padding: 20px 0;
+    width: 280px;
+    height: auto;
+    position: absolute;
+    border-radius: 3px;
+    top: 66px;
+    left: 300px;
+    background: rgba(255,255,255,1);
+    z-index: 100;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.50);
+}
+.resultOut{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.resultShow li{
+    font-size: 14px;
+    font-family: PingFangSC-Regular;
+    padding-left: 15px;    
+    list-style: none;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: #666666;
+    cursor: pointer;
+    white-space:nowrap; 
+    text-overflow:ellipsis; 
+    overflow: hidden; 
+}
+.resultShow li:hover{
+    background-color: #00A5E6;
+    color: #FFFFFF;
+}
+.typeName{
+    font-size: 14px;
+    color: #555555;
+    white-space: nowrap;  /*强制span不换行*/
+    display: inline-block;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;  /*超出部分以点号代替*/
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+}
+
+/*地图*/
+.dialog--shade{
+    background: #999999;
+    opacity: 0.9;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left:0;
+    top: 0;
+    z-index: 999
+}
+
+.more-warrant-list{
+    width: 80%;
+    height: 518px;
+    background:white;
+    overflow: auto;
+    position: fixed;
+    left: 10%;
+    top: 10%;
+    z-index: 1000;
+}
+.more-warrant-list-title{
+    display: block;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 16px;
+    background: #0095e2;
+    color: #ffffff;
+}
+.more-warrant-address-content{
+    width: 100%;
+    height: 60px;
+}
+.warrant-address-name{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    display: block;
+    font-size: 16px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.more-warrant-address-operating{
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+}
+.warrant-address-tip{
+    min-width: 20px;
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+    font-size: 14px;
+    color: #3fa4e6;
+}
+.more-warrant-map{
+    width: 100%;
+    /* height: 338px; */
+    height:393px;
+}
+
+.more--warranty--list:after{
+    content: "";
+    display: block;
+    height: 1px;
+    width: 96%;
+    background: #ccc;
+    margin: 10px 2%;
+}
+.clear{
+    clear: both;
+}
+.check_warp{
+    width:100%;
+    padding-left: 100px;
+}
+.check_li{
+    width:auto;
+    height:45px;
+    line-height: 45px;
+    color:#666;
+    float:left;
+    margin-right:20px;
+    cursor: pointer;
+}
+.check_li img{
+    width:12px;
+    height:12px;
+    margin-right:5px;
+
+}
+.area--dialog{
+
+}
+.selects{
+    max-width:100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #999999;
+    margin-right:5px;
+}
+.enterprise_warp select{
+    max-width:100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #999999;
+    margin-right:5px;
+}
+/*  地图搜索*/
+.search_con{
+    width:337px;
+    position: absolute;
+    top:140px;
+    left:20px;
+}
+.search_bar{
+    height:50px;
+    padding: 10px 10px;
+    background: #EBEBEB;
+}
+.search_input{
+    width:217px;
+    height: 30px;
+    outline: none;
+    margin-right: 10px;
+}
+.search{
+    width:80px;
+    line-height: 30px;
+    text-align: center;
+    background: #0095e2;
+    display: inline-block;
+    color: #fff;
+    border-radius: 5px;
+}
+.search_list_search>ul>li,
+.search_list_poi>ul>li{
+    width:100%;
+    height:50px;
+    overflow: hidden;
+    cursor: pointer;
+}
+/* .search_list>ul>li{
+    width:100%;
+    height:50px;
+    overflow: hidden;
+} */
+.search_list_imgone{
+    float: left;
+    margin:12px 12px;
+    width: 18px;
+    height:24px;
+}
+.search_list_img{
+    float: left;
+    margin:12px 12px;
+    width: 18px;
+    height:24px;
+    position: relative;
+}
+.search_list_img>span{
+    position: absolute;
+    top:3px;
+    left:1px;
+    width:18px;
+    height:24px;
+    text-align: center;
+    font-size: 12px;
+    color:#fff;
+}
+.search_list_des{
+    float: left;
+    margin-top: 6px;
+
+}
+.search_list_des>p{
+    color: #999;
+    font-size: 12px;
+    width:200px;
+    height:20px;
+}
+.search_list_des>span{
+    height: 20px;
+    font-size: 14px;
+    color:#0095e2;
+    display: inline-block;
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.search_list_position{
+    float: right;
+    color:#0095e2;
+    font-size: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.position_little{
+    color:#fff;
+    display: inline-block;
+    width:20px;
+    height:26px;
+    text-align: center;
+    position: relative;
+}
+.position_little>span{
+    position: absolute;
+    top: 3px;
+    left: 0;
+    font-size: 12px;
+    width: 20px;
+    text-align: center;
+}
+.search_list_search{
+    background: #fff;
+    height:300px;
+    overflow-y: auto;
+}
+.search_list_poi{
+    background: #fff;
+    /* height:185px; */
+    height:235px;
+    overflow-y: auto;
+}
+.search_list_con{
+    background: #fff;
+    height:300px;
+    overflow-y: auto;
+}
+.search_pagination{
+    height:65px;
+    overflow: auto;
+}
+.business-area{
+    height: 146px;
+    width: 398px;
+}
+
+.del-icon,.add-icon{
+    margin-left: 11px;
+    cursor: pointer;
+}
+.add-icon{
+
+}
+input.phone-input{
+    width:280px ;
+    margin-bottom: 5px;
+}
+.detail-content{
+    width:100%;
+    height:auto;
+    overflow: hidden;
+    margin-top: 15px;
+    padding-bottom:15px;
+    position: relative;
+    border-bottom: 1px #ebebeb solid;
+    display: flex;
+    flex-wrap: wrap;
+}
+.insure-correct{
+    padding: 0 0 0 10px;
+}
+.attachment-img{
+    width: 54px;
+    height: 54px;
+    background: #D8D8D8;
+    border: 1px solid #979797;
+    display: inline-block;
+    margin: 10px 10px 0 10px;
+    padding: 0 0.4px;
+    cursor: pointer;
+}
+.net_layout{
+    display: flex;
+    flex-wrap: wrap;
+    width:50%;
+    margin-bottom: 20px;
+    position: relative;
+}
+.net_noLayout{
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    width:50%;
+    margin-bottom: 20px;
+    position: relative;
+}
+.net_noLayout>label{
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    display: block;
+    padding-left:10px;
+    color: #666666;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-family: PingFangSC-Regular;
+}
+.net_noLayout>span{
+    /* height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    display: block; */
+    padding-left:10px;
+    /* color: #666666;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-family: PingFangSC-Regular; */
+}
+.net_layout>label{
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    /* display: inline-block; */
+    padding-left:10px;
+    color: #666666;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-family: PingFangSC-Regular;
+}
+.net_layout-wrap{
+    font-size: 14px;
+    color: #151515;
+    /* display:inline-block; */
+    line-height: 20px;
+    overflow: unset;
+    text-overflow: unset;
+    white-space: unset;
+    word-break: break-all;
+}
+.net_layout-noWrap,.no-data{
+    font-size: 14px;
+    color: #151515;
+    /* display: inline-block; */
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.children{
+    line-height: 17px;
+    font-family: PingFangSC-Regular;
+    color:#999999 ;
+    font-size: 12px;
+    position: absolute;
+    top: 17px;
+    left: 108px;
+}
+.net_layout .o-wrap{
+    font-size: 14px;
+    color: #333333;
+    display: block;
+    /* min-height: 20px; */
+    line-height: 20px;
+    overflow: unset;
+    text-overflow: unset;
+    white-space: unset;
+    word-break: break-all;
+}
+.font-size{
+    font-family:PingFangSC-Medium ;
+    color: #333333;
+    font-size: 16px;
+    line-height: 16px;
+    margin-top:20px;
+}
+.detail-download{
+    /* position: absolute; */
+    top: 0;
+    right: 20px;
+    z-index: 3;
+}
+
+
+
+
+
+.search-content{
+    width: 100%;
+    height: 50px;
+    padding: 10px 10px 10px 10px;
+    background: #FFFFFF;
+}
+
+.dialogTitle{
+    width: 100%;
+    height: 50px;
+    background: #0095e2;
+    line-height: 50px;
+    text-indent: 20px;
+    text-align: left;
+    color: #FFF;
+}
+
+
+textarea.textarea{
+    margin-top:30px; 
+    width: 90%;
+    height: 120px;
+    resize:none;
+    color: #333;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.dialog-button{
+    float: right;
+    margin-right: 20px;
+}
+
+.fontNum{
+    position: absolute;
+    top: 198px;
+    right: 27px;
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #999999;
+    text-align: right;
+}
+
+.errorTip{
+    position: absolute;
+    top: 208px;
+    left: 22px;
+    color: #FF0000;
+    font-size: 12px;    
+}

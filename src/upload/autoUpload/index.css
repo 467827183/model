@@ -1,0 +1,19 @@
+.box {
+    height: 200px;
+}
+
+.box > div {
+    height: 100%;
+}
+
+.box-left {
+    width: 200px;
+    float: left;
+    background-color: blue;
+}
+
+.box-right {
+    flex-basis: 0;
+overflow: hidden;
+    background-color: red;
+}
