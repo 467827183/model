@@ -1,12 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-
+import {Table,TableBody,TableCell,TableHead,TableRow,Paper} from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
     root: {
         width: '100%',
@@ -21,7 +15,19 @@ const useStyles = makeStyles(theme => ({
 function createData(name, calories, fat, carbs, protein,numbers) {
     return { name, calories, fat, carbs, protein,numbers };
 }
-
+const copyFor = ()=>{
+    const a = new Array(100)
+    console.log(a,'a')
+    let newArr = []
+    a.map((item,key)=>{
+        if(key%2==0&&key==0){
+            newArr.push(key)
+        }
+        console.log(newArr)
+        console.log(item,'item')
+    })
+}
+copyFor()
 const rows = [
     createData('Frozen yoghurt', 159, 6.0, 24, 4.0,'6%'),
     createData('Ice cream sandwich', 237, 9.0, 37, 4.3,'6%'),
@@ -32,7 +38,6 @@ const rows = [
 
 export default function SimpleTable() {
     const classes = useStyles();
-
     return (
         <Paper className={classes.root}>
             <Table className={classes.table}>

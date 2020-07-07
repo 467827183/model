@@ -9,9 +9,17 @@ import axios from 'axios';
 // const axios = require('axios');
 // import {message} from 'antd';
 
-export default function ajax(url, data = {}, method = 'GET') {
+export default function ajax(url, data = {}, method = 'get') {
     let promise = null;
-    if (method === 'GET') {
+    if (method === 'get') {
+        // axios({
+        //     method,
+        //     url,
+        //     data,
+        //     headers:{
+            //这个header可以配置请求头
+        //     }
+        // })
         promise = axios.get(url, {params: data});
     } else if (method === 'POST') {
         promise = axios.post(url, data);

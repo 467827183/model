@@ -10,9 +10,30 @@
     height: 100px;
 }
 .buttonBig{
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }
 .MuiButton-text{
     display: block;
+}
+.table-tbody>tr{
+    color: #262626;
+}
+.table-tbody>tr:hover{
+    box-shadow: 0 0 5px rgb(153, 153, 153);
+    -webkit-box-shadow: 0 0 5px rgba(153, 153, 153,1);
+    -moz-box-shadow: 0 0 5px rgba(153, 153, 153, 1);
+}
+.table-tbody>tr>td{
+    padding-left: 9px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    display: table-cell;
+    /*vertical-align: inherit;*/
+}
+.table-tbody>tr:nth-child(even){
+    background-color: rgba(0, 149, 226, 0.05);
+    color: #333333;
 }

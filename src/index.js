@@ -1,19 +1,20 @@
 import React from 'react'
 
-import {Route,Switch} from 'react-router-dom';
-import login from './login'
-import HomePage from './homePage/index'
-import routers from './routers/router';
+import {Route,Switch,Redirect} from 'react-router-dom';
+import router from './routers/router' 
 import {map} from 'lodash';
 export default ()=>{
+    const onAuthorizedRoute = (Component) => props => {
+    return  <Component {...props}/>
+};
     return (
         <Switch>
-            <Route path="/" exact component={login} />
-            {
-                map(routers,item=>(
-                    <Route path={item.path} key={item.path} component={HomePage} />
-                ))
-            }
+        {
+            router.map((item)=>{
+                return  <Route key={item.path} path={item.path}  render={onAuthorizedRoute(item.component)}/>
+            })
+        }
+        <Redirect from='/' to='/login'/>
         </Switch>
     )
 }

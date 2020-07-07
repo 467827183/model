@@ -17,12 +17,13 @@
     ],
     "@babel/preset-react"
   ],
-  "plugins": [
-    ["import", {
+  "plugins": [[
+    "import", {
       "libraryName": "antd",
       "libraryDirectory": "es",
       "style": "css"
-    }],
+    }
+  ],
     [
       "@babel/plugin-proposal-decorators",
       {

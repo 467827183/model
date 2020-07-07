@@ -29,7 +29,6 @@ export default (props)=>{
     //传递id对象单词本里面的东西
     //技术问题：定时间暂停
     //限定时间没有操作记错，问题判断在哪
-    console.log(finish,'finish')
     useEffect(() => {
         judgeShow();
         if(errStatus&&currentErr>=errs.length){
@@ -43,13 +42,10 @@ export default (props)=>{
             setCurrentErr(currentErr+1);
             a.clear();
         }
-        console.log(currentWords>=data.length-1,!finish,errs.length===0,'555')
         if(currentWords>=data.length-1&&finish&&errs.length===0){
-            console.log('进来了，改变finish')
             setFinish(true);
             }
         if(currentWords>=data.length-1&&finish){
-            console.log('结束的逻辑')
             //在这还得除非那个东西
             const r = window.confirm('是否进行下一阶段训练,选否则返回生词本');
             if(r){
@@ -71,7 +67,6 @@ export default (props)=>{
                     arr.push(err);
                     setErrs(arr);
                 }
-                console.log('再次做错进入错题本');
                 //xxx保存了错误题目
                 //每做五道题到xx里面找题重新渲染页面，然后在继续之前的题目
                 setNumberStatus(false);
@@ -82,7 +77,7 @@ export default (props)=>{
             if(numberStatus){
                 a.add(errs[currentErr].id);
             }
-             setValue(null);
+            setValue(null);
             setNumberStatus(true);
             //再这发送请求下一题
             stopTime.current.Stop();
@@ -114,7 +109,6 @@ export default (props)=>{
                 setErrStatus(true);
             }
              setValue(null);
-            //  console.log(currentWords,data.length,'d')
              if(currentWords!==data.length-1){
                 setCurrentWords(currentWords+1);
              }
@@ -125,12 +119,9 @@ export default (props)=>{
     const judgeShow=(useCallback(()=>{
             const Remainder = data.length%5;//余数
             const integer= Math.floor(data.length/5);//整数
-            console.log('进来了me1',currentWords+1,integer*5)
           if(currentWords+1>integer*5){
-            console.log((currentWords+1-(integer*5)%Remainder)===0,currentWords+1-(integer*5),Remainder)
             //不是在这判断者最多改变状态
                 if(currentWords+1-(integer*5)%Remainder===0){
-                    console.log('进来了')
                     //改变显示题目
                     setFinish(false);
                     setErrStatus(true);

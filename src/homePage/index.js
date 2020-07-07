@@ -23,10 +23,10 @@ const useStyles = makeStyles(theme => ({
         width: '300px'
     },
     a:{
-      display:'block',
-      width: '100%',
-      height:'100%',
-      color:'white'
+        display:'block',
+        width: '100%',
+        height:'100%',
+        color:'white'
     }
 
 }));
@@ -46,7 +46,7 @@ export default function SimpleTabs() {
                 <ul className={classes.ul}>
                     {
                         listArray.map((item,key)=>{
-                           return <li className={classes.li} key={key}> <Link className={classes.a} to={`${item.link}`}>{item.title}</Link></li>
+                            return <li className={classes.li} key={key}> <Link className={classes.a} to={`${item.link}`}>{item.title}</Link></li>
                         })
                     }
                 </ul>
