@@ -2,7 +2,6 @@ import React from 'react'
 
 import {Route,Switch,Redirect} from 'react-router-dom';
 import router from './routers/router' 
-import {map} from 'lodash';
 export default ()=>{
     const onAuthorizedRoute = (Component) => props => {
     return  <Component {...props}/>
@@ -14,7 +13,8 @@ export default ()=>{
                 return  <Route key={item.path} path={item.path}  render={onAuthorizedRoute(item.component)}/>
             })
         }
-        <Redirect from='/' to='/login'/>
+        <Redirect from='/' to='/main'/>
         </Switch>
     )
 }
+

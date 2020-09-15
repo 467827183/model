@@ -4,6 +4,9 @@ const webpack = require("webpack");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const JsConfigWebpackPlugin = require('js-config-webpack-plugin');
+const TsConfigWebpackPlugin = require('ts-config-webpack-plugin');
+const AssetConfigWebpackPlugin = require('asset-config-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const {BUILD_ENV} = process.env;
@@ -13,13 +16,24 @@ loader_scripts = configs[BUILD_ENV]['scripts'];
 //根据不同环境配置不同的css和js地址
 module.exports ={
     // 应用入口
+    // mode: "development",
     entry: {
-        entry: path.resolve(__dirname, '../index.js'),  // app.js作为打包的入口
+        project: path.resolve(__dirname, '../index.js'),  // app.js作为打包的入口
+        project1: path.resolve(__dirname, '../index.js'),
+        project2: path.resolve(__dirname, '../index.js'),
+        project3: path.resolve(__dirname, '../index.js'),
+        project4: path.resolve(__dirname, '../index.js'),
     },
     // 输出目录
     output: {
         filename: '[name].[hash].js',  //name代表entry对应的名字; hash代表 整个app打包完成后根据内容加上hash。一旦整个文件内容变更，hash就会变化
         path: path.join(__dirname, '../dist'), // 打包好之后的输出路径
+    },
+    //包名对类名
+    externals: {
+        "react":  'React',
+        "react-dom":"ReactDOM",
+        'xlsx':'XLSX'
     },
     module: {
         rules: [
@@ -41,12 +55,14 @@ module.exports ={
                 }
             }, {
                 // For CSS modules
+            // {loader:MiniCssExtractPlugin.loader
                 test: /\.css?$/,
                 include: /node_modules/,
                 use: [
                   'style-loader','css-loader'
                 ],
-              },{
+              },
+            {
                 // For pure CSS (without CSS modules)
                 test: /\.css?$/,
                 exclude: /node_modules/,
@@ -61,66 +77,77 @@ module.exports ={
               },
             {
                 test: /\.(png|jpg|gif|svg|ico)$/i,
-                loader: 'file-loader',
-                options: {}
+                use:[{
+                    loader: "file-loader",
+                    options: {
+                        name: '[name]_[hash].[ext]',
+                        outputPath: 'images/'
+                    }
+                }]
             }
         ]
     },
     optimization: {
-        minimizer: [
-            //js压缩
-            new UglifyJSPlugin({
-                sourceMap: true,
-                parallel: 4,
-                uglifyOptions: {
-                    output: {
-                        //好像是注释和格式化
-                        comments: false,
-                        beautify: false,
-                    },
-                    //压缩后把warning取消了？？
-                    compress: {
-                        drop_console: true
-                    },
-                },
-                cache: true,
-            }),
-            //这个是css压缩不过这压缩引用这么多次没问题么
-            new OptimizeCSSAssetsPlugin({})
-        ],
-        splitChunks: {
-            chunks: 'async',//默认只作用于异步模块，为`all`时对所有模块生效,`initial`对同步模块有效
-            minSize: 30000,//合并前模块文件的体积
-            minChunks: 1,//最少被引用次数
-            maxAsyncRequests: 5,
-            maxInitialRequests: 3,
-            name:false,
-            automaticNameDelimiter: '~',//自动命名连接符
-            cacheGroups: {
-                vendors: {
-                    name: 'vendor',
-                    chunks: 'initial',
-                    priority: -10,
-                    reuseExistingChunk: false,
-                    test: /node_modules\/(.*)\.js/
-                },
-                styles: {
-                    name: 'styles',
-                    test: /\.css$/,
-                    chunks: 'all',
-                    minChunks: 1,
-                    minSize:0,
-                    reuseExistingChunk: true,
-                    enforce: true
-                }
-            }
-        },
-        runtimeChunk:{
-            name:'manifest'
-        }
+        // minimizer: [
+        //     //js压缩
+        //     new UglifyJSPlugin({
+        //         sourceMap: true,
+        //         parallel: 4,
+        //         uglifyOptions: {
+        //             output: {
+        //                 //好像是注释和格式化
+        //                 comments: false,
+        //                 beautify: false,
+        //             },
+        //             //压缩后把warning取消了？？
+        //             compress: {
+        //                 drop_console: true
+        //             },
+        //         },
+        //         cache: true,
+        //     }),
+        //     //这个是css压缩不过这压缩引用这么多次没问题么
+        //     // new OptimizeCSSAssetsPlugin({})
+        // ],
+        // splitChunks: {
+        //     chunks: 'async',//默认只作用于异步模块，为`all`时对所有模块生效,`initial`对同步模块有效
+        //     minSize: 30000,//合并前模块文件的体积
+        //     minChunks: 1,//最少被引用次数
+        //     maxAsyncRequests: 5,
+        //     maxInitialRequests: 3,
+        //     name:false,
+        //     automaticNameDelimiter: '~',//自动命名连接符
+        //     cacheGroups: {
+        //         vendors: {
+        //             name: 'vendor',
+        //             chunks: 'initial',
+        //             priority: -10,
+        //             reuseExistingChunk: false,
+        //             test: /node_modules\/(.*)\.js/
+        //         },
+        //         styles: {
+        //             name: 'styles',
+        //             test: /\.css$/,
+        //             chunks: 'all',
+        //             minChunks: 1,
+        //             minSize:0,
+        //             reuseExistingChunk: true,
+        //             enforce: true
+        //         }
+        //     }
+        // },
+    //     runtimeChunk:{
+    //         name:'manifest'
+    //     }
     },
     plugins: [
+        // new JsConfigWebpackPlugin({
+        //     babelConfigFile: path.resolve(__dirname, '../.babelrc')
+        // }),
+        // new TsConfigWebpackPlugin(),
+        // new AssetConfigWebpackPlugin(),
         new CleanWebpackPlugin(),
+        // new webpack.ProgressPlugin(),
         new BundleAnalyzerPlugin({
             analyzerMode: "server",
             analyzerHost: "127.0.0.1",
@@ -168,9 +195,9 @@ module.exports ={
             }
         }), // 生成一个html页面，同时在webpack编译的时候。把我们所生成的entry都注入到这个html页面中,路径都是根据我们output配置的来走的。
         //压缩css的
-        new MiniCssExtractPlugin({
-            filename: '[name].css',
-            chunkFilename: '[name].[id].css',
-        }),
+        // new MiniCssExtractPlugin({
+        //     filename: '[name].css',
+        //     chunkFilename: '[name].[id].css',
+        // }),
     ]
 };

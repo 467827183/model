@@ -9,6 +9,7 @@ module.exports = {
     entry: path.resolve(__dirname, '../index.js'),
     devServer:{
         open:true,
+        stats:'none'
     },
     output: {
         path: path.resolve(__dirname, './dist/js'),
@@ -59,7 +60,10 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif|svg|ico|ttf|woff|woff2)$/i,
                 loader: 'file-loader',
-                options: {}
+                options: {
+                    name: '[name]_[hash].[ext]',
+                    outputPath: 'images/'
+                }
             }
         ]
     },

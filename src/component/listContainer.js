@@ -1,10 +1,12 @@
 import React, {Component} from "react";
 // import {updateHashUrl} from '../helper/tool';
-import EmptyData from './emptyData';
-import Pagination from './pagination2.0';
-import Loading from './loading'
-import NetWorkError from './network'
+import {EmptyData} from './emptyData';
+import {Pagination} from './pagination2.0';
+import {Loading} from './loading'
+import {NetWorkError} from './network'
+
 import {Table,Thead} from './table'
+
 export function listContainer(ListComponent, props) {
     return class ListWrap extends Component {
         constructor(props) {

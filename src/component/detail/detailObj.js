@@ -1,13 +1,12 @@
-const detailObj=()=>{
-    return{
+    const obj = {
         //项目信息
         projectDetailObj:[
-            { label: 'company_name', name: '企业名称', type:'normal',noData: '未输入企业名称' },
-            { label: 'company_address', name: '企业地址', type:'normal',noData: '暂无数据' },
-            { label: 'report_number', name: '报案号', type:'normal',noData: '未输入报案号' },
-            { label: 'insurance_number', name: '保单号', type:'normal',noData: '未输入保单号' },
-            { label: 'create_at', name: '创建时间', type:'yearDate',noData: '未输入创建时间'},
-            { label: 'submit_at', name: '完成时间', type:'monthDate',noData: '未输入完成时间'},
+            { label: 'company_name', name: '企业名称', type:'text',noData: '未输入企业名称' },
+            { label: 'company_address', name: '企业地址', type:'text',noData: '暂无数据' },
+            { label: 'report_number', name: '报案号', type:'text',noData: '未输入报案号' },
+            { label: 'insurance_number', name: '保单号', type:'text',noData: '未输入保单号' },
+            { label: 'create_at', name: '创建时间', type:'data',noData: '未输入创建时间',temp:'yyyy-MM-dd hh:mm'},
+            { label: 'submit_at', name: '完成时间', type:'data',noData: '未输入完成时间',temp:'yyyy-MM-dd'},
             { label: 'user_name', name: '查勘人员', type:'normal',noData: '查勘人员' },
         ],
         //资料信息
@@ -31,10 +30,9 @@ const detailObj=()=>{
             { label: 'bank_account', name: '账号', noData: '暂无数据' },
         ],
         //企业联系人
-        contacts:[  
+        contacts:[
             {label: 'com_contact_name', name: '姓名', noData: '暂无数据'},
             {label: 'com_contact_phone', name: '手机号码', noData: '暂无数据'},
         ],
     }
-}
-export default detailObj()
+export default obj

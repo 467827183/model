@@ -3,7 +3,7 @@ import {Td} from "./component/td";
 import {Table} from "./component/table";
 import {Tbody} from "./component/tbody";
 import {Thead} from "./component/thead";
-export const TableComponent={
+export default TableComponent={
     Table,
     Thead,
     Tbody,

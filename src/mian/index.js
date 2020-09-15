@@ -1,10 +1,7 @@
 import React from 'react';
-import {Link,Switch,Redirect,Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
-import ReciteWords from '../reciteWords';
-import upload from '../upload/route';
-import Table from '../table'
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
@@ -51,12 +48,7 @@ export default ()=> {
                     }
                 </ul>
             </AppBar>
-            <Switch>
-                <Route path="/main/upload" component={upload} />
-                <Route path="/main/reciteWords" component={ReciteWords} />
-                <Route path="/main/table" component={Table} />
-                <Redirect to="/main/upload"/>
-            </Switch>
+
         </div>
     );
 }

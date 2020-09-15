@@ -56,19 +56,9 @@ export class DetailComponent extends Component {
     }
 }
 class NetLayout extends Component {
-    big_img=(imgArr = [], index)=> {
-        let newImgArr = [];
-        imgArr = imgArr || [];
-        imgArr.map((img) => {
-            newImgArr.push({
-                id: img.attachment_id,
-                path: img.attachment_path
-            })
-        });
-        // BigImg(newImgArr, index);
-    };
+
     render(){
-        let {width = "50%", minWidth = "auto",detail=null,imgTitle='',stamp=false,wrap=false,month=false,last=false,children=null,state,img=false} = this.props;
+        let {width = "50%", minWidth = "auto",detail=null,type} = this.props;
         let styleCss = {width, minWidth};
         // let url = this.props.detail.id?this.props.detail[imgTitle]:[];
         let url = []
@@ -87,8 +77,19 @@ class NetLayout extends Component {
     }
 
 }
+const big_img=(imgArr = [], index)=> {
+    let newImgArr = [];
+    imgArr = imgArr || [];
+    imgArr.map((img) => {
+        newImgArr.push({
+            id: img.attachment_id,
+            path: img.attachment_path
+        })
+    });
+    // BigImg(newImgArr, index);
+};
 const fontTemplete = {
-    img:function({detail,imgTitle}){
+    img:({detail,imgTitle})=>{
         let url = detail[imgTitle];
         return url.map((l, key) => {
             return (
@@ -97,19 +98,14 @@ const fontTemplete = {
             )
         })
     },
-    normal:function ({content,last,noData}) {
+    text: ({content,last,noData})=>{
         return <span className={last?style['net_layout-noWrap']:style['net_layout-wrap']}>
                     {content?content:noData}
                </span>
     },
-    monthDate:function ({content,last,noData}) {
+    date: ({content,last,noData,temp})=> {
         return <span className={last?style['net_layout-noWrap']:style['net_layout-wrap']}>
-                    {content?fmt(content,'yyyy-MM-dd hh:mm'):noData}
-               </span>
-    },
-    yearDate:function ({content,last,noData}) {
-        return <span className={last?style['net_layout-noWrap']:style['net_layout-wrap']}>
-                    {content?fmt(content,'yyyy-MM-dd'):noData}
+                    {content?fmt(content,temp):noData}
                </span>
     },
 }
