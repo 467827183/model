@@ -45,7 +45,7 @@
     "@material-ui/icons": "^4.4.3",
     "add": "^2.0.6",
     "asset-config-webpack-plugin": "^2.0.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "babel-loader": "^8.0.6",
     "babel-plugin-dynamic-import-webpack": "^1.1.0",
     "babel-plugin-import": "^1.12.2",
